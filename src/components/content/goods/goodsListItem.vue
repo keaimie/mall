@@ -1,13 +1,12 @@
 <template>
-   <div class="goodsItem">
-     <img :src="goodsItem.show.img" alt="">
+   <div class="goodsItem" @click="itemClick(goodsItem.iid)">
+     <img :src="getImage" alt="" @load="itemImageLoad">
      <div class="goodsInfo">
        <p>{{goodsItem.title}}}</p>
        <span class="price">{{goodsItem.price}}</span>
        <span class="cfav">{{goodsItem.cfav}}</span>
      </div>
    </div>
-
 </template>
 
 <script>
@@ -19,6 +18,19 @@ export default {
       default() {
         return {}
       }
+    }
+  },
+  methods:{
+    itemImageLoad() {
+      this.$bus.$emit('itemImageLoad')
+    },
+    itemClick(id) {
+      this.$router.push('/detail/' + id)
+    }
+  },
+  computed:{
+    getImage() {
+      return this.goodsItem.image || this.goodsItem.show.img
     }
   }
 }

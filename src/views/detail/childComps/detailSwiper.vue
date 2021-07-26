@@ -1,9 +1,7 @@
 <template>
   <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" :stop-propagation="false">
     <van-swipe-item v-for="(item, index) in banners" :key="index">
-      <a :href="item.link">
-        <img :src="item.image" alt="" @load="imageLoad">
-      </a>
+        <img :src="item" alt="" @load="imageLoad">
     </van-swipe-item>
   </van-swipe>
 </template>
@@ -42,6 +40,9 @@ export default {
 </script>
 
 <style scoped>
+.my-swipe{
+  height: 300px;
+}
 .my-swipe img{
   width:100%
 }

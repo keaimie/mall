@@ -28,7 +28,7 @@ export default {
 <style scoped>
 
  .scroll {
-   height: calc(100vh - 93px - 49px);
+   height: calc(100vh - 93px - 49px - 49px);
    overflow: hidden;
 }
 </style>

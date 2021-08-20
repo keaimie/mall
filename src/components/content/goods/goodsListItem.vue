@@ -1,5 +1,6 @@
 <template>
    <div class="goodsItem" @click="itemClick(goodsItem.iid)">
+<!--     v-lazy="getImage" :key="goodsItem.iid"-->
      <img :src="getImage" alt="" @load="itemImageLoad">
      <div class="goodsInfo">
        <p>{{goodsItem.title}}}</p>

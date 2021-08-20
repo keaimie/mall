@@ -10,7 +10,9 @@ import FastClick from 'fastclick'
 FastClick.attach(document.body)
 
 import VueLazyload from "vue-lazyload";
-Vue.use(VueLazyload)
+Vue.use(VueLazyload,{
+  loading:require('@/assets/img/common/placeholder.png')
+})
 
 Vue.config.productionTip = false
 Vue.prototype.$bus = new Vue()

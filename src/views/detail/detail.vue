@@ -139,7 +139,7 @@ export default {
       //   this.$refs.navBar.currentIndex = 3
       // }
     },
-    addCart() {
+    async addCart() {
       let product = {
         id:this.id,
         title:this.goods.title,
@@ -147,9 +147,11 @@ export default {
         imgUrl:this.topImage[0],
         price:this.goods.newPrice
       }
-      this.cart(product).then(res => {
-        this.$toast.show(res)
-      })
+      // this.cart(product).then(res => {
+      //   this.$toast.show(res)
+      // })
+      let res =await this.$store.dispatch('addCart',product)
+      console.log(res);
     }
 
   }
